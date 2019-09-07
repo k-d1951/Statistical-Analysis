@@ -61,3 +61,20 @@ is used to model the number of successful outcomes in trials where there is some
 
 ### Poisson Distribution
 Count the number of times something has happened . Counting events over time given some continous rate.
+
+### Normal Distribution
+    # Generate normal data
+    from scipy.stats import norm
+    data = norm.rvs(size=1000)
+
+    # Plot distribution
+    plt.hist(data)
+    plt.show()
+
+    # Compute and print true probability for greater than 2
+    true_prob = 1 - norm.cdf(2)
+    print(true_prob)
+
+    # Compute and print sample probability for greater than 2
+    sample_prob = sum(obs > 2 for obs in data) / len(data)
+    print(sample_prob)
